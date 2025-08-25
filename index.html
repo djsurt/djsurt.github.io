@@ -3,70 +3,291 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dhananjay Surti</title>
-    <link rel="stylesheet" href="./css/styles.css">
+    <title>Dhananjay Surti - Portfolio</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Press Start 2P', monospace;
+            background: #2c3e50;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .main-card {
+            background: #ecf0f1;
+            border: 4px solid #34495e;
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+            position: relative;
+        }
+        
+        h1 {
+            color: #2c3e50;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 10px;
+            margin-bottom: 40px;
+        }
+        
+        .button-grid {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .pixel-button {
+            background: #3498db;
+            border: 3px solid #2980b9;
+            color: white;
+            padding: 15px 20px;
+            font-family: 'Press Start 2P', monospace;
+            font-size: 10px;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: all 0.2s;
+            min-width: 100px;
+        }
+        
+        .pixel-button:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        .pixel-button:active {
+            transform: translateY(0);
+        }
+        
+        .work-section {
+            background: #bdc3c7;
+            border: 3px solid #95a5a6;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+        
+        .work-section h2 {
+            color: #2c3e50;
+            font-size: 12px;
+            margin-bottom: 20px;
+        }
+        
+        .footer {
+            color: #7f8c8d;
+            font-size: 8px;
+        }
+        
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .modal-content {
+            background: #ecf0f1;
+            border: 4px solid #34495e;
+            border-radius: 15px;
+            padding: 30px;
+            max-width: 400px;
+            width: 90%;
+            text-align: center;
+            position: relative;
+        }
+        
+        .modal h3 {
+            color: #2c3e50;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        
+        .pixel-art {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            background: #3498db;
+            border: 2px solid #2980b9;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            position: relative;
+        }
+        
+        .resume-art {
+            background: #e74c3c;
+            border-color: #c0392b;
+        }
+        
+        .github-art {
+            background: #34495e;
+            border-color: #2c3e50;
+        }
+        
+        .linkedin-art {
+            background: #3498db;
+            border-color: #2980b9;
+        }
+        
+        .modal p {
+            color: #7f8c8d;
+            font-size: 10px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .close-btn {
+            background: #e74c3c;
+            border: 2px solid #c0392b;
+            color: white;
+            padding: 10px 20px;
+            font-family: 'Press Start 2P', monospace;
+            font-size: 8px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        
+        .close-btn:hover {
+            background: #c0392b;
+        }
+        
+        /* Simple 8-bit icons */
+        .icon-resume::before {
+            content: "📄";
+            font-size: 30px;
+        }
+        
+        .icon-github::before {
+            content: "⚡";
+            font-size: 30px;
+            color: white;
+        }
+        
+        .icon-linkedin::before {
+            content: "💼";
+            font-size: 30px;
+        }
+        
+        @media (max-width: 600px) {
+            .main-card {
+                padding: 20px;
+                margin: 10px;
+            }
+            
+            h1 {
+                font-size: 16px;
+            }
+            
+            .button-grid {
+                gap: 10px;
+            }
+            
+            .pixel-button {
+                font-size: 8px;
+                padding: 12px 15px;
+                min-width: 80px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>Dhananjay Surti</h1>
-            <p class="subtitle">MSCS Candidate at San Jose State University</p>
-            <nav>
-                <ul class="nav-list">
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                </ul>
-            </nav>
+    <div class="main-card">
+        <h1>Dhananjay Surti</h1>
+        <p class="subtitle">MSCS Candidate at San Jose State University</p>
+        
+        <div class="button-grid">
+            <button class="pixel-button" onclick="openModal('resume')">Resume</button>
+            <button class="pixel-button" onclick="openModal('github')">Github</button>
+            <button class="pixel-button" onclick="openModal('linkedin')">LinkedIn</button>
         </div>
-    </header>
-
-    <main>
-        <div class="container">
-            <section id="about">
-                <h2>About</h2>
-                <p>
-                    I am an MSCS candidate at San Jose State University with a passion for building meaningful technology solutions. Previously, I volunteered at Model.Earth, developing interfaces and features for the nonprofit organization.
-                </p>
-                <p>
-                    My biggest project there was an LLM-based application designed to provide insights on GitHub repositories, helping onboard new volunteers more effectively. This experience sparked my interest in leveraging AI to solve real-world problems.
-                </p>
-                <p>
-                    I have also gained valuable industry experience as a Software Developer Intern at Global Quality Corp. and Ticketmaster, where I worked on diverse projects ranging from data pipelines and computer vision models to service monitoring tools.
-                </p>
-            </section>
-
-            <section id="projects">
-                <h2>Projects</h2>
-                <ul class="project-list">
-                    <li class="project-item">
-                        <div class="project-title">LLM-based GitHub Insights Tool</div>
-                        <p class="project-description">
-                            Developed an intelligent application to analyze GitHub repositories and provide actionable insights for onboarding new volunteers at Model.Earth.
-                        </p>
-                    </li>
-                    <li class="project-item">
-                        <div class="project-title">Pipe Quality Assessment System</div>
-                        <p class="project-description">
-                            Built comprehensive data pipelines and computer vision models to automatically assess the quality of sewage pipes at Global Quality Corp.
-                        </p>
-                    </li>
-                    <li class="project-item">
-                        <div class="project-title">Service Health Monitoring Tool</div>
-                        <p class="project-description">
-                            Created an internal tool for Ticketmaster to effectively manage and monitor the health status of various services across the platform.
-                        </p>
-                    </li>
-                </ul>
-            </section>
+        
+        <div class="work-section">
+            <h2>Worked At</h2>
+            <p style="color: #7f8c8d; font-size: 9px; line-height: 1.4;">
+                Model.Earth • Global Quality Corp • Ticketmaster
+            </p>
         </div>
-    </main>
-
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <p>&copy; 2025 Dhananjay Surti</p>
-            </div>
+        
+        <div class="footer">
+            <p>Copyright 2025</p>
         </div>
-    </footer>
+    </div>
+
+    <!-- Resume Modal -->
+    <div id="resumeModal" class="modal">
+        <div class="modal-content">
+            <div class="pixel-art resume-art icon-resume"></div>
+            <h3>Resume</h3>
+            <p>Download my resume to learn more about my experience in software development, AI/ML projects, and my academic background at San Jose State University.</p>
+            <button class="close-btn" onclick="closeModal('resume')">Close</button>
+        </div>
+    </div>
+
+    <!-- GitHub Modal -->
+    <div id="githubModal" class="modal">
+        <div class="modal-content">
+            <div class="pixel-art github-art icon-github"></div>
+            <h3>GitHub</h3>
+            <p>Check out my code repositories featuring LLM applications, computer vision projects, data pipelines, and various development tools I've built.</p>
+            <button class="close-btn" onclick="closeModal('github')">Close</button>
+        </div>
+    </div>
+
+    <!-- LinkedIn Modal -->
+    <div id="linkedinModal" class="modal">
+        <div class="modal-content">
+            <div class="pixel-art linkedin-art icon-linkedin"></div>
+            <h3>LinkedIn</h3>
+            <p>Connect with me professionally to discuss opportunities in software development, AI/ML, and technology innovation.</p>
+            <button class="close-btn" onclick="closeModal('linkedin')">Close</button>
+        </div>
+    </div>
+
+    <script>
+        function openModal(type) {
+            const modal = document.getElementById(type + 'Modal');
+            modal.style.display = 'flex';
+        }
+        
+        function closeModal(type) {
+            const modal = document.getElementById(type + 'Modal');
+            modal.style.display = 'none';
+        }
+        
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = 'none';
+            }
+        }
+    </script>
 </body>
 </html>
