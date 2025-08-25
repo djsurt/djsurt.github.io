@@ -3,30 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dhananjay's Website</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <title>Dhananjay Surti</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>Welcome to My Personal Website</h1>
+        <div class="container">
+            <h1>Dhananjay Surti</h1>
+            <p class="subtitle">MSCS Candidate at San Jose State University</p>
+            <nav>
+                <ul class="nav-list">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
+
     <main>
-        <section>
-            <h2>About Me</h2>
-            <p>I am a MSCS candidate at San Jose State University. Before starting my degree at SJSU, I worked at Model.Earth as a volunteer and helped build various interfaces and features for the nonprofit.
-                My biggest project at Model.Earth was building an LLM-based application to provide insights on github repositories to help onboard new volunteers. I have also worked as a Software Developer Intern at Global Quality Corp. and Ticketmaster.
-                At Global Quality Corp., I built data pipelines and computer vision models to help assess the quality of sewage pipes and determine if they needed to be repaired.
-                At Ticketmaster, I worked on building a new internal tool to help manage and monitor the health of various services.
-            </p>
-        </section>
-        <section>
-            <h2>Projects</h2>
-            <p>Here are some of my projects.</p>
-        </section>
+        <div class="container">
+            <section id="about">
+                <h2>About</h2>
+                <p>
+                    I am an MSCS candidate at San Jose State University with a passion for building meaningful technology solutions. Previously, I volunteered at Model.Earth, developing interfaces and features for the nonprofit organization.
+                </p>
+                <p>
+                    My biggest project there was an LLM-based application designed to provide insights on GitHub repositories, helping onboard new volunteers more effectively. This experience sparked my interest in leveraging AI to solve real-world problems.
+                </p>
+                <p>
+                    I have also gained valuable industry experience as a Software Developer Intern at Global Quality Corp. and Ticketmaster, where I worked on diverse projects ranging from data pipelines and computer vision models to service monitoring tools.
+                </p>
+            </section>
+
+            <section id="projects">
+                <h2>Projects</h2>
+                <ul class="project-list">
+                    <li class="project-item">
+                        <div class="project-title">LLM-based GitHub Insights Tool</div>
+                        <p class="project-description">
+                            Developed an intelligent application to analyze GitHub repositories and provide actionable insights for onboarding new volunteers at Model.Earth.
+                        </p>
+                    </li>
+                    <li class="project-item">
+                        <div class="project-title">Pipe Quality Assessment System</div>
+                        <p class="project-description">
+                            Built comprehensive data pipelines and computer vision models to automatically assess the quality of sewage pipes at Global Quality Corp.
+                        </p>
+                    </li>
+                    <li class="project-item">
+                        <div class="project-title">Service Health Monitoring Tool</div>
+                        <p class="project-description">
+                            Created an internal tool for Ticketmaster to effectively manage and monitor the health status of various services across the platform.
+                        </p>
+                    </li>
+                </ul>
+            </section>
+        </div>
     </main>
+
     <footer>
-        <p>&copy; 2025 My Personal Website</p>
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 Dhananjay Surti</p>
+            </div>
+        </div>
     </footer>
-    <script src="js/main.js"></script>
 </body>
 </html>
